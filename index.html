@@ -11,6 +11,7 @@
             padding: 20px;
             background-color: #e3f2fd;
             color: #333;
+            margin: 0;
         }
         .container {
             max-width: 800px;
@@ -57,6 +58,33 @@
         .goal-section h2 {
             margin-bottom: 10px;
             font-size: 24px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            .status {
+                font-size: 20px;
+                padding: 10px;
+            }
+            .goal-section {
+                padding: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+            .status {
+                font-size: 18px;
+                padding: 8px;
+            }
         }
     </style>
 </head>
