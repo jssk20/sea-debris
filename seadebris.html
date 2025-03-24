@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sea Debris Detector</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #e3f2fd;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .status {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            transition: 0.3s ease-in-out;
+        }
+        .safe {
+            color: green;
+            background-color: #d4edda;
+            border: 2px solid green;
+        }
+        .alert {
+            color: red;
+            background-color: #f8d7da;
+            border: 2px solid red;
+        }
+        h1 {
+            color: #0077b6;
+            font-size: 32px;
+        }
+        .content {
+            text-align: left;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+        .goal-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: #0077b6;
+            color: white;
+            border-radius: 8px;
+        }
+        .goal-section h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌊 Sea Debris Detection System 🌍</h1>
+        <h2>📏 Distance: <span id="distance">--</span> cm</h2>
+        <div id="status" class="status">Waiting for data...</div>
+        
+        <div class="content">
+            <h2>🚀 Why This Detector?</h2>
+            <p>Every year, millions of tons of plastic and debris pollute our oceans, affecting marine life and disrupting ecosystems. Our Sea Debris Detector is designed to identify and alert when debris is detected in water, helping in clean-up operations and ocean conservation efforts.</p>
+            
+            <h2>🔬 How It Works</h2>
+            <p>The system uses an ultrasonic sensor to measure the distance of objects in the water. If debris is detected within a predefined range, an alert is triggered. This technology can be integrated with automated clean-up systems or used in monitoring stations.</p>
+        </div>
+        
+        <div class="goal-section">
+            <h2>🌱 Supporting Sustainable Development Goals (SDGs)</h2>
+            <p>🌍 **Goal 14 - Life Below Water**: Helps reduce marine pollution and protect aquatic ecosystems.<br>
+               🌱 **Goal 13 - Climate Action**: Encourages innovative solutions to combat environmental threats.<br>
+               🔄 **Goal 12 - Responsible Consumption & Production**: Promotes waste management and recycling efforts.</p>
+        </div>
+    </div>
+    
+    <script>
+        function updateStatus() {
+            let distance = Math.floor(Math.random() * 150); // Simulating sensor data
+            document.getElementById("distance").innerText = distance;
+            let statusDiv = document.getElementById("status");
+            
+            if (distance <= 10) {
+                statusDiv.innerText = "⚠️ Debris Detected!";
+                statusDiv.className = "status alert";
+            } else {
+                statusDiv.innerText = "✅ Clear Path";
+                statusDiv.className = "status safe";
+            }
+            setTimeout(updateStatus, 2000); // Detect debris every 2 seconds
+        }
+        setTimeout(updateStatus, 2000); // Initial call
+    </script>
+</body>
+</html>
